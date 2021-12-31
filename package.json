@@ -1,0 +1,22 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Game of Tic Tac Toe: connect the symbol (X or O) horizontally, vertically, or diagonally before your opponent",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "tic",
+    "tac",
+    "toe",
+    "tictactoe",
+    "game"
+  ],
+  "author": "Mian Answer",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^17.3.0"
+  }
+}
