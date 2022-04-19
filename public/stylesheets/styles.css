@@ -24,19 +24,19 @@ body {
     border-style: solid;
 }
 
-.col {
+.cell {
     background-color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.col:nth-child(2) {
+.cell:nth-child(2) {
     border-width: 0 5px 0 5px;
     border-color: black;
     border-style: solid;
 }
 
-.col:hover {
+.cell:hover {
     cursor: pointer;
 }
