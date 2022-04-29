@@ -53,6 +53,89 @@ const addSymbolToBoard = function (cellDiv, symbol) {
     board[row][col] = symbol;
 }
 
+const horizontalVerification = function () {
+    for (let row = 0; row < board.length; ++row) {
+        var symbol = board[row][0];
+        var isMatch = true;
+
+        for (let col = 1; col < board[row].length; ++col) {
+            if (board[row][col] != symbol || board[row][col] == '') {
+                isMatch = false;
+                break;
+            }
+        }
+
+        if (isMatch) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+const verticalVerification = function () {
+    for (let col = 0; col < board[0].length; ++col) {
+        var symbol = board[0][col];
+        var isMatch = true;
+
+        for (let row = 1; row < board.length; ++row) {
+            if (board[row][col] != symbol || board[row][col] == '') {
+                isMatch = false;
+                break;
+            }
+        }
+
+        if (isMatch) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+const leftDiagonalVerification = function () {
+    var symbol = board[0][0];
+    var isMatch = true;
+
+    for (let row = 1; row < board.length; ++row) {
+        if (board[row][row] != symbol || board[row][row] == '') {
+            isMatch = false;
+            break;
+        }
+    }
+
+    if (isMatch) {
+        return true;
+    }
+
+    return false;
+}
+
+const rightDiagonalVerification = function () {
+    var colLength = board[0].length;
+    var symbol = board[0][colLength - 1];
+    var isMatch = true;
+
+    for (let row = 1; row < board.length; ++row) {
+        for (let col = board.length - 1 - row; col >= 0; --col) {
+            if (board[row][col] != symbol || board[row][col] == '') {
+                isMatch = false;
+                break;
+            }
+        }
+    }
+
+    if (isMatch) {
+        return true;
+    }
+
+    return false;
+}
+
+const verifyWinner = function () {
+    return horizontalVerification() || verticalVerification() || leftDiagonalVerification() || rightDiagonalVerification();
+}
+
 const getSymbol = function () {
     if (index >= symbols.length) {
         index = 0;
